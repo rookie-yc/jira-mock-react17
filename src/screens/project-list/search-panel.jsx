@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react"
 
 export const SearchPanel = (props) => {
-    const {param, setParam, users} = this.props
+    const {param, setParam, users} = props
 
     return <form>
         <div>
@@ -15,7 +15,7 @@ export const SearchPanel = (props) => {
             })}>
                 <option value={''}>负责人</option>
                 { 
-                    users.map(user => <option value={user.id}>{user.name}</option>)
+                    users.map(user => <option key={user.id} value={user.id}>{user.name}</option>)
                 }
             </select>
         </div>
