@@ -4,7 +4,12 @@ const apiUrl = process.env.REACT_APP_API_URL;
 
 export const LoginScreen = () => {
   const login = (param: { username: string; password: string }) => {
-    fetch(`${apiUrl}/login`).then(async (response) => {
+    fetch(`${apiUrl}/login`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    }).then(async (response) => {
       if (response.ok) {
         setList(await response.json());
       }
