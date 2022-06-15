@@ -9,9 +9,9 @@ export const LoginScreen = () => {
       headers: {
         "Content-Type": "application/json",
       },
+      body: JSON.stringify(param),
     }).then(async (response) => {
       if (response.ok) {
-        setList(await response.json());
       }
     });
   };
@@ -22,6 +22,7 @@ export const LoginScreen = () => {
       .value;
     const password = (event.currentTarget.elements[1] as HTMLInputElement)
       .value;
+    login({ username, password });
   };
 
   return (

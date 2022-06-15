@@ -25,13 +25,13 @@ export const ProjectListScreen = () => {
     });
   }, [debouncedParam]);
 
-  useMount(() => {
-    fetch(`${apiUrl}/users`).then(async (response) => {
-      if (response.ok) {
-        setUsers(await response.json());
-      }
-    });
-  }, []);
+  //   useMount(() => {
+  //     fetch(`${apiUrl}/users`).then(async (response) => {
+  //       if (response.ok) {
+  //         setUsers(await response.json());
+  //       }
+  //     });
+  //   }, []);
   return (
     <div>
       <SearchPanel users={users} param={param} setParam={setParam} />
